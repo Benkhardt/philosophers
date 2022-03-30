@@ -30,8 +30,13 @@ Every philosopher is treated as a single thread (pthread). Philosophers don't kn
 ##### example:
 Copy repo and run bash cmd 'make' inside the repository. </br>
 Valid 'make' attributes are: {clean, fclean, re}.</br>
-./philo 5 5000 1000 1000 7 (argument 5 is optional).
+```
+make
+./philo 5 5000 1000 1000 7 
+```
+(argument 5 is optional).
 ### learned
--> about mutex lock and unlock
--> about threading and sync threads in a single process via pthread.h
--> about 
+-> about mutex lock and unlock </br>
+-> about threading and sync threads in a single process.</br>
+-> about semaphores</br>
+-> about gettimeofday()</br>
