@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:16:44 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/03/30 16:16:52 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/03/30 18:31:46 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 static char	*get_message(int type)
 {
 	if (type == TYPE_EAT)
-		return (" is eating\n");
+		return (" has started eating\n");
 	else if (type == TYPE_SLEEP)
-		return (" is sleeping\n");
+		return (" has started sleeping\n");
 	else if (type == TYPE_FORK)
-		return (" has taken a fork\n");
+		return (" has taken a spoon\n");
 	else if (type == TYPE_THINK)
-		return (" is thinking\n");
+		return (" has started thinking\n");
 	else if (type == TYPE_OVER)
-		return ("must eat count reached\n");
-	return (" died\n");
+		return ("enough of eating and thinking, I'M DONE\n");
+	return (" has passed away\n");
 }
 
 void	display_message(t_philo *philo, int type)
