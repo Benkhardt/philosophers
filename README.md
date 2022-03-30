@@ -36,7 +36,7 @@ make
 ```
 (argument 5 is optional).
 ### learned
--> about mutex lock and unlock </br>
--> about threading and sync threads in a single process.</br>
--> about semaphores</br>
--> about gettimeofday()</br>
+-> ...about mutex.</br>
+-> ...about threading and sync threads in a single process (POSIX Threads).</br>
+-> ...about parallel computing. </br>
+-> ...about semaphores in c</br>
