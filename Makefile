@@ -6,7 +6,7 @@
 #    By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 11:25:45 by dbenkhar          #+#    #+#              #
-#    Updated: 2022/03/30 11:39:31 by dbenkhar         ###   ########.fr        #
+#    Updated: 2022/03/30 16:17:09 by dbenkhar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		= philo
 
 SRCS		= eat.c exit_clear.c forks.c init.c \
 			main.c messages.c start_threads.c \
-			utils.c
+			utils.c get_time.c
 
 OBJS		= $(SRCS:.c=.o)
 

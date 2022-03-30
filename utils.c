@@ -6,13 +6,13 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 08:47:04 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/03/30 15:05:18 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/03/30 16:16:03 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
@@ -49,8 +49,8 @@ int	ft_atoi(char const *str)
 	i = 0;
 	is_neg = 0;
 	res = 0;
-	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v' ||
-			str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
+	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v' \
+	|| str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
 		i++;
 	while (str[i] == '+' || str[i] == '-')
 	{
@@ -65,40 +65,4 @@ int	ft_atoi(char const *str)
 	if (is_neg % 2)
 		return (res * (-1));
 	return (res);
-}
-
-t_time	get_dtime(void)
-{
-	static struct timeval	tv;
-	static t_time			dt;	
-
-	gettimeofday(&tv, NULL);
-	tv.tv_sec += 7200;
-	dt.t_min = tv.tv_sec / 60;
-	dt.tl_sec = tv.tv_sec % 60;
-	dt.t_hour = dt.t_min / 60;
-	dt.tl_min = dt.t_min % 60;
-	dt.t_day = dt.t_hour / 24;
-	dt.tl_hour = dt.t_hour % 24;
-	dt.u_secs = tv.tv_usec / 1000;
-	return (dt);
-}
-
-void	ft_puttime_fd(t_time ttime, int fd)
-{
-	ft_putnbr_fd(ttime.tl_hour, fd);
-	ft_putchar_fd(':', fd);
-	ft_putnbr_fd(ttime.tl_min, fd);
-	ft_putchar_fd(':', fd);
-	ft_putnbr_fd(ttime.tl_sec, fd);
-	ft_putchar_fd(':', fd);
-	ft_putnbr_fd(ttime.u_secs, fd);
-}
-
-uint64_t	get_time(void)
-{
-	static struct timeval	tv;
-
-	gettimeofday(&tv, NULL);
-	return ((tv.tv_sec * (u_int64_t)1000) + (tv.tv_usec / 1000));
 }

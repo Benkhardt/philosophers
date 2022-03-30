@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 09:32:10 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/03/28 10:31:39 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/03/30 16:11:06 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	init_mutex(t_state *state)
 	pthread_mutex_init(&state->write_m, NULL);
 	pthread_mutex_init(&state->somebody_dead_m, NULL);
 	pthread_mutex_lock(&state->somebody_dead_m);
-	state->forks_m = (pthread_mutex_t *)malloc(sizeof(*(state->forks_m)) * state->amount);
+	state->forks_m = malloc(sizeof(*(state->forks_m)) * state->amount);
 	if (!state->forks_m)
 		return (1);
 	while (i < state->amount)

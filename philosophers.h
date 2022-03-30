@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 08:26:32 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/03/30 15:05:28 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/03/30 16:13:22 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 
 struct	s_state;
 
-typedef struct		s_time{
+typedef struct s_time{
 	long			t_min;
 	long			tl_sec;
 	long			t_hour;
@@ -40,10 +40,9 @@ typedef struct		s_time{
 	long			tl_hour;
 	long			dt_secs;
 	long			u_secs;
-}					t_time;
+}	t_time;
 
-typedef struct		s_philo
-{
+typedef struct s_philo{
 	int				position;
 	int				is_eating;
 	uint64_t		limit;
@@ -55,55 +54,53 @@ typedef struct		s_philo
 	pthread_mutex_t	mutex;
 	pthread_mutex_t	eat_m;
 	t_time			ttime;
-}					t_philo;
+}	t_philo;
 
-typedef struct		s_state
-{
+typedef struct s_state{
 	int				amount;
 	uint64_t		time_to_die;
 	uint64_t		time_to_eat;
 	uint64_t		time_to_sleep;
 	int				must_eat_count;
 	uint64_t		start;
-	//uint64_t		daytime;
 	t_philo			*philos;
 	pthread_mutex_t	*forks_m;
 	pthread_mutex_t	write_m;
 	pthread_mutex_t	somebody_dead_m;
-}					t_state;
+}	t_state;
 
-int		start_threads(t_state *state);
+int			start_threads(t_state *state);
 
-size_t	ft_strlen(char const *str);
+size_t		ft_strlen(char const *str);
 
-int		clear_state(t_state *state);
+int			clear_state(t_state *state);
 
-int		exit_error(char const *str);
+int			exit_error(char const *str);
 
-int		clear_state(t_state *state);
+int			clear_state(t_state *state);
 
-int		init(t_state *state, int argc, char const **argv);
+int			init(t_state *state, int argc, char const **argv);
 
 uint64_t	get_time(void);
 
 t_time		get_dtime(void);
 
-void	display_message(t_philo *philo, int type);
+void		display_message(t_philo *philo, int type);
 
-int		ft_atoi(char const *str);
+int			ft_atoi(char const *str);
 
-void	ft_putnbr_fd(u_int64_t nbr, int fd);
+void		ft_putnbr_fd(u_int64_t nbr, int fd);
 
-void	take_forks(t_philo *philo);
+void		take_forks(t_philo *philo);
 
-void	eat(t_philo *philo);
+void		eat(t_philo *philo);
 
-void	clear_forks(t_philo *philo);
+void		clear_forks(t_philo *philo);
 
-t_time	get_dtime(void);
+t_time		get_dtime(void);
 
-void	ft_puttime_fd(t_time ttime, int fd);
+void		ft_puttime_fd(t_time ttime, int fd);
 
-void 	ft_putchar_fd(char c, int fd);
+void		ft_putchar_fd(char c, int fd);
 
 #endif

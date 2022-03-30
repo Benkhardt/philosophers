@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:16:44 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/03/30 15:07:33 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/03/30 16:16:52 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static char	*get_message(int type)
 
 void	display_message(t_philo *philo, int type)
 {
-	static int done;
+	static int	done;
 
 	done = 0;
 	pthread_mutex_lock(&philo->state->write_m);

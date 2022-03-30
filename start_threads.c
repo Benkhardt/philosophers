@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@students.42wolfsburg.de +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 10:34:48 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/03/30 14:49:25 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/03/30 16:09:56 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	start_threads(t_state *state)
 	i = 0;
 	if (state->must_eat_count > 0)
 	{
-		if (pthread_create(&tid, NULL, &monitor_count, (void*)state) != 0)
+		if (pthread_create(&tid, NULL, &monitor_count, (void *)state) != 0)
 			return (1);
 		pthread_detach(tid);
 	}
@@ -92,9 +92,9 @@ int	start_threads(t_state *state)
 		philo = (void *)(&state->philos[i]);
 		if (pthread_create(&tid, NULL, &routine, philo) != 0)
 			return (1);
-			pthread_detach(tid);
-			usleep(100);
-			i++;
+		pthread_detach(tid);
+		usleep(100);
+		i++;
 	}
 	return (0);
 }
